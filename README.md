@@ -16,8 +16,10 @@ $ docker run -d -p 5000:5000 --name docker-registry registry
 FOR EXAMPLE
 
 
-$ docker pull hello-world   //or any other image
-$ docker tag hello-world 127.0.0.1:5000/test_image   //any name you want to assign after 127.0.0.1:5000/
+$ docker pull hello-world                    //or any other image
+
+$ docker tag hello-world 127.0.0.1:5000/test_image   /                 /any name you want to assign after 127.0.0.1:5000/
+
 $ docker push 127.0.0.1:5000/test_image
 
 
@@ -32,7 +34,9 @@ latest: digest: sha256:92c7f9c92844bbbb5d0a101b22f7c2a7949e40f8ea90c8b3bc396879d
 ---- Removing that image from local cache and pull it from the new registry-----
 
 $ docker image remove hello-world 
+
 $ docker image remove 127.0.0.1:5000/test_image
+
 $ docker pull 127.0.0.1:5000/test_image
 
 ----- RECREATING REGISTRY USING BIND MOUNT AND SEE HOW IT STORES THE DATA 
