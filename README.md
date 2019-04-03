@@ -6,9 +6,13 @@ YOU CAN CHECK IT BY TYPING " # docker container ls "
 
 # basic steps for running a private docker registry 
 -----> run the registry image -----
+
+
 $ docker run -d -p 5000:5000 --name docker-registry -v $(pwd)/registry-data:/var/lib/registry registry
 
-------> Retag an existing image and pushing it into your new private registry 
+------> Retag an existing image and pushing it into your new private registry -------------
+
+
 FOR exmaple:
 $ docker pull hello-world   //or any other image
 $ docker tag hello-world 127.0.0.1:5000/test_image   //any name you want to assign after 127.0.0.1:5000/
